@@ -1,0 +1,59 @@
+{
+  "name": "@mobizerg/nest-elasticsearch",
+  "description": "A Elasticsearch integration module for nestjs framework",
+  "version": "0.1.0",
+  "author": "Mobizerg",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": [
+    "nestjs",
+    "elasticsearch",
+    "search",
+    "typescript",
+    "mobizerg"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "pre-commit": "lint-staged",
+    "pre-publish:npm": "npm run build",
+    "publish:npm": "npm publish --access public"
+  },
+  "devDependencies": {
+    "@nestjs/common": "6.1.1",
+    "@types/lodash": "^4.14.130",
+    "husky": "^2.3.0",
+    "lint-staged": "8.1.7",
+    "prettier": "^1.17.1",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "6.5.2",
+    "rxjs-compat": "6.5.2",
+    "lodash": "^4.17.11",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.4.5",
+    "ts-node": "^8.1.0",
+    "@elastic/elasticsearch": "^7.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "@elastic/elasticsearch": "^7.0.1"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^6.0.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.0.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "homepage": "https://github.com/mobizerg/nest-elasticsearch",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mobizerg/nest-elasticsearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mobizerg/nest-elasticsearch/issues"
+  }
+}
