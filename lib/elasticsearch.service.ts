@@ -19,6 +19,18 @@ export class ElasticsearchService<T> {
     }
   }
 
+  async getIndexStats(): Promise<any> {
+    try {
+      const { body } = await this.client.indices.stats({
+        index: this.config.index,
+      });
+      return body;
+    } catch (error) {
+      Logger.error(error.message, error.stack);
+      return false;
+    }
+  }
+
   async createIndex(): Promise<any> {
     try {
       const { body } = await this.client.indices.create({
