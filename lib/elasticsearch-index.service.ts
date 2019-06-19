@@ -8,6 +8,10 @@ export class ElasticsearchIndexService<T> {
     return await this.elasticsearch.hasIndex();
   }
 
+  async getIndexStats(): Promise<boolean> {
+    return await this.elasticsearch.getIndexStats();
+  }
+
   async createIndex(): Promise<any> {
     return await this.elasticsearch.createIndex();
   }
